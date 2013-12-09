@@ -1,0 +1,55 @@
+#optionButton{
+	background-image: url(../images/gear.png);
+	background-size: 40px;
+	width: 50px;
+	height: 36px;
+}
+#deleteButton {
+	margin: 1px;
+	background-image: url(../images/delete.png);
+	width: 30px;
+	height: 30px;
+}
+#moreButton {
+	margin: 1px;
+	background-image: url(../images/cog.png);
+	width: 30px;
+	height: 30px;
+}
+#editButton {
+	margin: 1px;
+	background-image: url(../images/pencil.png);
+	width: 30px;
+	height: 30px;
+}
+#saveButton {
+	margin: 1px;
+	background-image: url(../images/disk.png);
+	width: 30px;
+	height: 30px;
+}
+#buttonSpan {
+	position: relative;
+	top: 2px;
+	right: 3px;
+	float: right;
+	clear: both;
+}
+button {
+	min-width: 20px;
+	background-color: white;
+	min-height: 20px;
+	border-radius: 7px;
+	background-repeat: no-repeat;
+	background-size: 16px;
+	background-position: center;
+	border: 1px solid gray;
+	box-shadow: 0px 1px 2px darkgray;
+}
+button:hover {
+	border: 1px solid darkgray;
+}
+button:active {
+	box-shadow: none;
+}
+

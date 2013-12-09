@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="styles/main.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/dialog.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/button.css"/>
+		<script src="js\application.js" type="text/javascript"></script>
+		<script src="js\dialog.js" type="text/javascript"></script>
+		<script src="js\contact.js" type="text/javascript"></script>
+		<script src="js\main.js" type="text/javascript"></script>
+	</head>
+	<body>
+	<div id="overlay" class="splash"></div>
+	<div id="dialog" class="splashDialog">LФДDIИG КФЙTДКT...</div>
+		<div class="book">
+			<div class="leftPage">
+				<div class="top">
+					<input type="search" placeholder="Search..."></input>
+					<button id="newContact" onclick="application.createContact();"></button>
+					<select id="groupFilter" onChange="application.loadContacts();">
+						<option value="All">All Groups</option>
+						<option value="Business">Business</option>
+						<option value="Educational">Educational</option>
+						<option value="Friend">Friend</option>
+					</select>
+				</div>
+				<div class="leftMain">
+					<div class="index">
+						<li id="current">a</li>
+						<li>b</li>
+						<li>c</li>
+						<li>d</li>
+						<li>e</li>
+						<li>f</li>
+						<li>g</li>
+						<li>h</li>
+						<li>i</li>
+						<li>j</li>
+						<li>k</li>
+						<li>l</li>
+						<li>m</li>
+						<li>n</li>
+						<li>o</li>
+						<li>p</li>
+						<li>q</li>
+						<li>r</li>
+						<li>s</li>
+						<li>t</li>
+						<li>u</li>
+						<li>v</li>
+						<li>w</li>
+						<li>x</li>
+						<li>y</li>
+						<li>z</li>
+					</div>
+				</div>
+				<div class="contactList" id="contactList">
+				</div>
+			</div>
+			<div class="rightPage">
+				<div class="detailHeader"><div id="detailHeaderTitle" class="detailHeaderTitle"></div><span id="buttonSpan"></span></div>
+				<div class="optionsButton"><button id="optionButton" onclick="application.showDialog(optionsDialog)" ></button></div>
+				<div class="details">
+					<table width="90%" id="contactDetails">
+						<tr id="contactName"><th>Name</th><td id="nameContainer"></td></tr>
+						<tr id="contactGroup"><th>Group</th><td id="groupContainer"></td></tr>
+						<tr id="contactAddress"><th>Address</th><td id="addressContainer"></td></tr>
+						<tr id="contactPostcode"><th>Postcode</th><td id="postcodeContainer"></td></tr>
+						<tr id="contactDateOfBirth"><th>Date of Birth</th><td id="dateOfBirthContainer"></td></tr>
+						<tr id="contactMobile"><th>Phone (mobile)</th><td id="mobileNoContainer"></td></tr>
+						<tr id="contactHome"><th>Phone (Home)</th><td id="homeContainer"></td></tr>
+						<tr id="contactEmail"><th>Email Address</th><td id=emailContainer></td></tr>
+					</table>
+					<hr width="90%" />
+					<table width="90%" id="contactDetails">
+						<tr id="contactTwitter"><th>Twitter</th><td id="twitterContainer"></td></tr>
+						<tr id="contactFacebook"><th>Facebook</th><td id="facebookContainer"></td></tr>
+						<tr id="contactGooglePlus"><th>Google+</th><td id="googleContainer"></td></tr>
+					</table>
+					<img id="staticmap" src="#" alt=""/>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>
+<!--
+<span id="buttonSpan">
+	<button id="moreButton" onclick="application.showDialog(example)" />
+	<button id="saveButton" onclick="application.showDialog(example)" />
+	<button id="deleteButton" onclick="application.showDialog(verifyDelete)" />
+</span>
+!>
