@@ -43,6 +43,7 @@ function Application()
 	this.validateField		= validateField;
 
 	function validateField(field, validation) {
+		application.log("validation - i want that shit");
 		var	retVal = true;
 		if (field !== "") {
 			retVal = false;
@@ -75,6 +76,17 @@ function Application()
 						retVal = false;
 					}
 					break;
+				case "nonhtml":
+					if (field.value.contains("<"))
+					{
+						retVal = false;
+						alert("A field contains HTML elements!");
+					}
+					else if (field.value.contains(">"))
+					{
+						retVal = false;
+						alert("A field contains HTML elements!");
+					}
 			}
 		}
 		return retVal;
@@ -408,27 +420,48 @@ function Application()
 		if (application.validateField(inputEmail.value, "email"))
 		{
 			contact.email				= inputEmail.value;
-			invalid = invalid + "e";
 		}
 		if (application.validateField(inputFirstname.value, "nonblank"))
 		{
 			contact.firstname		= inputFirstname.value;
-			invalid = invalid + "f";
 		}
 		if (application.validateField(inputLastname.value, "nonblank"))
 		{
 			contact.lastname		= inputLastname.value;
-			invalid = invalid + "l";
+		}
+		if (application.validateField(inputTwitter.value, "nonblank"))
+		{
+		contact.twitter			= inputTwitter.value;
+		}
+		if (application.validateField(inputFacebook.value, "nohtml"))
+		{
+		contact.facebook		= inputFacebook.value;
+		}
+		if (application.validateField(inputHomeNo.value, "nohtml"))
+		{
+		contact.homeNo			= inputHomeNo.value;
+		}
+		if (application.validateField(inputMobileNo.value, "nohtml"))
+		{
+		contact.mobileNo		= inputMobileNo.value;
+		}
+		if (application.validateField(inputdateOfBirth.value, "nohtml"))
+		{
+		contact.dateOfBirth	= inputdateOfBirth.value;
+		}
+		if (application.validateField(inputPostcode.value, "nohtml"))
+		{
+		contact.postcode		= inputPostcode.value;
+		}
+		if (application.validateField(address.value, "nohtml"))
+		{
+		contact.address			= address.value;
+		}
+		if (application.validateField(inputGoogle.value, "nohtml"))
+		{
+		contact.google			= inputGoogle.value;
 		}
 		contact.group				= group.value;
-		contact.address			= address.value;
-		contact.postcode		= inputPostcode.value;
-		contact.dateOfBirth	= inputdateOfBirth.value;
-		contact.mobileNo		= inputMobileNo.value;
-		contact.homeNo			= inputHomeNo.value;
-		contact.facebook		= inputFacebook.value;
-		contact.twitter			= inputTwitter.value;
-		contact.google			= inputGoogle.value;
 		contact.map					= 'http://maps.google.com/maps/api/staticmap?scale=1&center=' + inputPostcode.value + '&zoom=14&size=430x280&maptype=hybrid&markers=size:normal|color:RED|label:C|' + inputPostcode.value + '&sensor=false';
 		contact.toast				= '<span id="name">' + contact.firstname + ' ' + contact.lastname + '</span> <span id="title">' + contact.group + '</span>';
 		application.buttonMode("normal");
